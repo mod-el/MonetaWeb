@@ -13,8 +13,8 @@ class MonetaWebController extends Controller
 				die();
 				break;
 			case 'error':
-				$this->viewOptions['template'] = null;
-				$this->viewOptions['errors'][] = 'Errore durante la ricezione della conferma del pagamento, contattare l\'amministratore per verificare.';
+				$this->model->viewOptions['template'] = null;
+				$this->model->viewOptions['errors'][] = 'Errore durante la ricezione della conferma del pagamento, contattare l\'amministratore per verificare.';
 				break;
 		}
 	}
