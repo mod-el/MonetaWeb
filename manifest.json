@@ -2,5 +2,7 @@
 	"name": "MonetaWeb",
 	"description": "Integrazione con MonetaWeb (Banca Intesa)",
 	"version": "0.0.1",
-	"dependencies": {}
+	"dependencies": {
+		"Core": ">=2.7.1"
+	}
 }
