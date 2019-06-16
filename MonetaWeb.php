@@ -71,7 +71,7 @@ class MonetaWeb extends Module
 
 	public function initialize(float $amount, int $order, array $options = []): array
 	{
-		$baseUrl = ((isset($_SERVER['HTTPS']) and $_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . PATH;
+		$baseUrl = BASE_HOST . PATH;
 
 		$data = array_merge([
 			'operationType' => 'initialize',
