@@ -16,11 +16,10 @@ class MonetaWeb extends Module
 	{
 		$this->options = $this->retrieveConfig();
 
-		if ($this->options['test']) {
+		if ($this->options['test'])
 			$this->url = 'https://test.monetaonline.it/monetaweb/payment/2/xml';
-		} else {
+		else
 			$this->url = 'https://www.monetaonline.it/monetaweb/payment/2/xml';
-		}
 	}
 
 	/**
