@@ -12,30 +12,9 @@ $config = [
 	\'id\' => null,
 	\'password\' => null,
 	\'test\' => true,
-	\'verifySecurityToken\' => function($orderId, $securityToken){
-		return false;
-	},
-	\'markOrderAsPaid\' => function($orderId){},
 	\'finalUrl\' => null,
 ];
 ';
 		});
-	}
-
-	/**
-	 * Rule for payment verification
-	 *
-	 * @return array
-	 */
-	public function getRules(): array
-	{
-		return [
-			'rules' => [
-				'monetaweb' => 'monetaweb',
-			],
-			'controllers' => [
-				'MonetaWeb',
-			],
-		];
 	}
 }
