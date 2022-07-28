@@ -54,7 +54,7 @@ class MonetaWeb extends Module implements PaymentInterface
 
 	public function handleRequest(): array
 	{
-		switch ($this->model->getRequest(1)) {
+		switch ($this->model->getRequest(3)) {
 			case 'response':
 				try {
 					if (!is_dir(__DIR__ . DIRECTORY_SEPARATOR . 'data'))
@@ -92,6 +92,7 @@ class MonetaWeb extends Module implements PaymentInterface
 					];
 				} catch (\Exception $e) {
 					fwrite($handle, getErr($e) . "\n\n");
+					fclose($handle);
 				}
 				die();
 
