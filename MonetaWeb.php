@@ -63,8 +63,8 @@ class MonetaWeb extends Module implements PaymentInterface
 					$handle = fopen(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'monetaweb-last-log.txt', 'w+');
 					fwrite($handle, var_export($_POST, true) . "\n\n");
 
-					$this->model->on('error', function ($err) use ($handle) {
-						fwrite($handle, var_export($err, true) . "\n\n");
+					set_error_handler(function (int $errno, string $errstr, ?string $errfile = null, ?int $errline = null) use ($handle) {
+						fwrite($handle, $errstr . " on " . $errfile . ":" . $errline . "\n\n");
 					});
 
 					if (!in_array($_POST['result'], ['CAPTURED', 'APPROVED']))
