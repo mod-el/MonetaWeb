@@ -124,7 +124,6 @@ class MonetaWeb extends Module implements PaymentInterface
 		$response = curl_exec($c);
 		if (curl_errno($c))
 			throw new \Exception('Errore CURL: ' . curl_error($c));
-		curl_close($c);
 
 		$xml = new \SimpleXMLElement($response);
 		if (isset($xml->errorcode) or isset($xml->errormessage))
